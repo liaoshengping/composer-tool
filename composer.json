@@ -1,0 +1,19 @@
+{
+    "name": "liaosp\/tool",
+    "description": "php工具箱",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "liaosp",
+            "email": "1194008361@qq.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Liaosp\\Tool\\": "src"
+        }
+    }
+}
