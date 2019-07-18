@@ -1,6 +1,6 @@
 {
     "name": "liaosp\/tool",
-    "description": "php工具箱",
+    "description": "php工具箱 爬微信公众号文章",
     "license": "MIT",
     "authors": [
         {
