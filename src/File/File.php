@@ -10,7 +10,7 @@ class File {
      * @param $path
      * @return int
      */
-    public function size_dir($path) {
+    public static function size_dir($path) {
         $size = 0;
         $handle = opendir($path);
         while (($item = readdir($handle)) !== false) {
@@ -30,7 +30,7 @@ class File {
      * @param $source
      * @param $dest
      */
-    public function copy_dir($source, $dest) {
+    public static function copy_dir($source, $dest) {
         if (!file_exists($dest))
             mkdir($dest);
         $handle = opendir($source);
@@ -51,7 +51,7 @@ class File {
      * @param $path
      * @return bool
      */
-    public function rm_dirs($path) {
+    public static function rm_dirs($path) {
         if(is_file($path)){
             unlink($path);
             return TRUE;
@@ -76,7 +76,7 @@ class File {
      * @param $newname 必需。规定文件或目录的新名称。
      * @param $context 可选。规定文件句柄的环境。
      */
-    public function re_name($oldname, $newname, $context) {
+    public static function re_name($oldname, $newname, $context) {
         return rename($oldname, $newname, $context);
     }
 
@@ -87,7 +87,7 @@ class File {
      * @param type $dest 目标文件夹
      * @return boolean 是否成功
      */
-    public function copy_all($source,$dest){
+    public static function copy_all($source,$dest){
         if(is_file($source)){
             // 如果是文件就直接拷贝
             return copy($source, $dest);
@@ -101,7 +101,7 @@ class File {
      * @param string $dir 文件夹路径
      * @return type
      */
-    public function deep_scan_dir($dir) {
+    public static function deep_scan_dir($dir) {
         $fileArr = array();
         $dirArr = array();
         $dir = rtrim($dir, '//');
@@ -132,7 +132,7 @@ class File {
      * @param string $file_name 文件名
      * @return string 后缀名
      */
-    public function get_file_extension($file_name = ''){
+    public static function get_file_extension($file_name = ''){
         return strtolower(substr(strrchr($file_name, '.'), 1));
     }
 }
