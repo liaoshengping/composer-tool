@@ -9,8 +9,10 @@
 ```
 Character::getEnByCnByString('我是中国人',2)  //return  WS
 
-String::utf8_strlen('我是中国ren')
-
+```
+## 获取中文字符长度
+```
+String::utf8_strlen('我是中国ren') // 7
 ```
 ## 抓取微信公众号文章
 
