@@ -12,8 +12,16 @@
 中文转化为英文首字母
 ```
 Character::getEnByCnByString('我是中国人',2)  //return  WS
-
+截取字符串，防止中文乱码？？  String::mSubStr()
 ```
+## 验证
+```
+判断是否为合法的ip地址 Verify::isIPAddress
+是否为邮箱    Verify::isValidEmail
+Shi为手机     Verify::isMobile
+是否https    Verify::isHttps
+```
+
 ## 获取中文字符长度
 ```
 String::utf8_strlen('我是中国ren') // 7
