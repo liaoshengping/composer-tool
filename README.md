@@ -2,6 +2,10 @@
 
 ```
 获取毫秒：Time::millisecond()
+
+得到某天凌晨零点的时间戳 Time::getSomeZeroTimeStamp('today')
+友好时间显示 比如 刚刚，前一分钟，前一天 Time::friendDate(23423232423)
+获取前七天的信息 Time::getLast7Days()
 ```
 ## 字符：
 
