@@ -21,7 +21,10 @@ Character::getEnByCnByString('我是中国人',2)  //return  WS
 Shi为手机     Verify::isMobile
 是否https    Verify::isHttps
 ```
-
+## 文件
+```
+下载网络图片到本地：NetFile::getImage($url, $save_dir='', $filename='', $type=0);
+```
 ## 获取中文字符长度
 ```
 String::utf8_strlen('我是中国ren') // 7
