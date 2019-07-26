@@ -8,6 +8,19 @@ class SyncCurl
 {
     /**
      * 异步请求网络，回调处理获取的参数
+     *
+    $urls = [];
+    for ($i=0;$i<100;$i++){
+    $urls[] ='http://baidu.com';
+    }
+
+
+    function callback($output){
+    echo $output;
+    }
+
+    rolling_curl($urls,'callback');
+
      * @param $urls
      * @param $callback
      * @param null $custom_options
