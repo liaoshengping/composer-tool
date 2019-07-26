@@ -6,7 +6,14 @@ namespace Liaosp\Tool\Curl;
 
 class SyncCurl
 {
-    function Curl($urls, $callback, $custom_options = null)
+    /**
+     * 异步请求网络，回调处理获取的参数
+     * @param $urls
+     * @param $callback
+     * @param null $custom_options
+     * @return bool
+     */
+    public static function Curl($urls, $callback, $custom_options = null)
     {//多个url访问
 
 // make sure the rolling window isn't greater than the # of urls
