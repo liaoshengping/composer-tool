@@ -12,7 +12,7 @@
 中文转化为英文首字母
 ```
 Character::getEnByCnByString('我是中国人',2)  //return  WS
-截取字符串，防止中文乱码？？  String::mSubStr()
+截取字符串长度，防止中文乱码？？  String::mSubStr()
 ```
 ## 验证
 ```
@@ -24,6 +24,7 @@ Shi为手机     Verify::isMobile
 ## 文件
 ```
 下载网络图片到本地：NetFile::getImage($url, $save_dir='', $filename='', $type=0);
+移动文件夹，查看文件夹大小，文件夹管理：File::...
 ```
 ## 获取中文字符长度
 ```
