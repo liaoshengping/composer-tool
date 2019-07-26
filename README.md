@@ -12,7 +12,7 @@
 中文转化为英文首字母
 ```
 Character::getEnByCnByString('我是中国人',2)  //return  WS
-截取字符串长度，防止中文乱码？？  String::mSubStr()
+截取字符串，防止中文乱码？？  String::mSubStr()
 ```
 ## 验证
 ```
