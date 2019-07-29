@@ -129,4 +129,20 @@ class  Character{
         return null;
 
     }
+
+    /**
+     * 下划线转化后面为大写
+     * user_id
+     * ucfirst ==true  第一个为大写 ： UserId
+     * ucfirst ==false 第一个为小写 ： userId
+     * @param $str
+     * @param bool $ucfirst
+     * @return mixed|string
+     */
+    public static function convertUnderline ( $str , $ucfirst = true)
+    {
+        $str = ucwords(str_replace('_', ' ', $str));
+        $str = str_replace(' ','',lcfirst($str));
+        return $ucfirst ? ucfirst($str) : $str;
+    }
 }

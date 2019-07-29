@@ -13,6 +13,8 @@
 ```
 Character::getEnByCnByString('我是中国人',2)  //return  WS
 截取字符串，防止中文乱码？？  String::mSubStr()
+user_id 转化为大写： UserId 或 userId  Character::convertUnderline('user_id',false)
+
 ```
 ## 验证
 ```
