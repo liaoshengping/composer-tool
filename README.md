@@ -6,6 +6,7 @@
 得到某天凌晨零点的时间戳 Time::getSomeZeroTimeStamp('today')
 友好时间显示 比如 刚刚，前一分钟，前一天 Time::friendDate(23423232423)
 获取前七天的信息 Time::getLast7Days()
+请在   1.2天 完成订单Time::tranCountTimeFormat(时间戳)
 ```
 ## 字符：
 
@@ -14,7 +15,7 @@
 Character::getEnByCnByString('我是中国人',2)  //return  WS
 截取字符串，防止中文乱码？？  String::mSubStr()
 user_id 转化为大写： UserId 或 userId  Character::convertUnderline('user_id',false)
-
+UserId =》 user_id大写字母转化为下划线Character::convertUnderlineToLetter
 ```
 ## 验证
 ```

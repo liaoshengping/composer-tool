@@ -126,7 +126,35 @@ class Time
         }
         return $weeks_arr;
     }
+    /**
+     * 格式化计数时间
+     * @param $timestamp
+     * @return string
+     */
+    public static function tranCountTimeFormat($timestamp)
+    {
+        $str = '';
 
+        if ($timestamp % 60 != 0) {
+            $str = $timestamp % 60 . '秒';
+        }
+        if ($timestamp % 3600 != 0 && ($timestamp % 3600) / 60 > 1) {
+            $str = (int)(($timestamp % 3600) / 60) . '分钟' . $str;
+        }
+        if ($timestamp % (3600 * 24) != 0 && ($timestamp % (3600 * 24)) / 3600 > 1) {
+            $str = (int)(($timestamp % (3600 * 24)) / 3600) . '小时' . $str;
+        }
+        if ($timestamp % (3600 * 24 * 30) != 0 && ($timestamp % (3600 * 24 * 30)) / (3600 * 24) > 1) {
+            $str = (int)(($timestamp % (3600 * 24 * 30)) / (3600 * 24)) . '天' . $str;
+        }
+        if ($timestamp % (3600 * 24 * 365) != 0 && ($timestamp % (3600 * 24 * 365)) / (3600 * 24 * 30) > 1) {
+            $str = (int)(($timestamp % (3600 * 24 * 365)) / (3600 * 24 * 30)) . '月' . $str;
+        }
+        if ($timestamp > 3600 * 24 * 365) {
+            $str = (int)($timestamp / (3600 * 24 * 365)) . '年' . $str;
+        }
+        return $str;
+    }
 
 
 
