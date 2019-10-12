@@ -63,4 +63,7 @@ $file_contents = file_get_contents($url);
 echo $file_contents;
 ```
 
+## 生成UUid
+String::createUuid
+
 

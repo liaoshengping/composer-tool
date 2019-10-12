@@ -4,32 +4,39 @@
 namespace Liaosp\Tool\String;
 
 
-class  Character{
+class  Character
+{
     /**
      * @param $string
-     * @param int $length  转化的长度
+     * @param int $length 转化的长度
      *
      * @return bool|string
      */
-    public static function getEnByCnByString($string, $length=10){
-        if(empty($string)){return false;}
+    public static function getEnByCnByString($string, $length = 10)
+    {
+        if (empty($string)) {
+            return false;
+        }
         preg_match_all("/./u", $string, $arr);
-        $exp =$arr[0];
-        if(empty($exp)){return false;}
-        $sum =1;
-        $res ='';
-        foreach ($exp as $key=>$value){
+        $exp = $arr[0];
+        if (empty($exp)) {
+            return false;
+        }
+        $sum = 1;
+        $res = '';
+        foreach ($exp as $key => $value) {
             $cha = self::getFirstCharter($value);
-            $res.=$cha;
-            if(!empty($cha)){
+            $res .= $cha;
+            if (!empty($cha)) {
                 $sum++;
             }
-            if($sum >$length){
+            if ($sum > $length) {
                 return $res;
             }
         }
         return $res;
     }
+
     /**
      * 转化中文为字母的工具
      * @param $str
@@ -37,7 +44,7 @@ class  Character{
      */
     public static function getFirstCharter($str)
     {
-        if(is_numeric($str)){
+        if (is_numeric($str)) {
             return '';
         }
         if (empty($str)) {
@@ -139,10 +146,10 @@ class  Character{
      * @param bool $ucfirst
      * @return mixed|string
      */
-    public static function convertUnderline ( $str , $ucfirst = true)
+    public static function convertUnderline($str, $ucfirst = true)
     {
         $str = ucwords(str_replace('_', ' ', $str));
-        $str = str_replace(' ','',lcfirst($str));
+        $str = str_replace(' ', '', lcfirst($str));
         return $ucfirst ? ucfirst($str) : $str;
     }
 
@@ -151,20 +158,23 @@ class  Character{
      * @param $name
      * @return string
      */
-    function convertUnderlineToLetter($name){
+    function convertUnderlineToLetter($name)
+    {
         $temp_array = array();
-        for($i=0;$i<strlen($name);$i++){
+        for ($i = 0; $i < strlen($name); $i++) {
             $ascii_code = ord($name[$i]);
-            if($ascii_code >= 65 && $ascii_code <= 90){
-                if($i == 0){
+            if ($ascii_code >= 65 && $ascii_code <= 90) {
+                if ($i == 0) {
                     $temp_array[] = chr($ascii_code + 32);
-                }else{
-                    $temp_array[] = '_'.chr($ascii_code + 32);
+                } else {
+                    $temp_array[] = '_' . chr($ascii_code + 32);
                 }
-            }else{
+            } else {
                 $temp_array[] = $name[$i];
             }
         }
-        return implode('',$temp_array);
+        return implode('', $temp_array);
     }
+
+
 }

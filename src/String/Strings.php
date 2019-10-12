@@ -49,4 +49,24 @@ class Strings
     使用方法如下：
         echo mSubStr($str, $start=0, $length=15, $charset="utf-8", $suffix=true)
     */
+
+    /**
+     *  * 生成uuid
+     *  * @return string
+     *  */
+    public static function createUuid()
+    {
+        $hexChar = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'];
+        date_default_timezone_set('PRC');
+        $mTimestamp = sprintf("%.3f", microtime(true));
+        $mTimestampStr = str_replace(".", "", $mTimestamp);
+
+        $key = "A" . strtoupper(base_convert($mTimestampStr, 10,  16));
+
+        for ($i = 0; $i < 20; $i++) {
+            $key .= $hexChar[rand(0, 15)];
+        }
+
+        return $key;
+    }
 }
