@@ -23,6 +23,7 @@ UserId =》 user_id大写字母转化为下划线Character::convertUnderlineToLe
 是否为邮箱    Verify::isValidEmail
 Shi为手机     Verify::isMobile
 是否https    Verify::isHttps
+是否为空     Verify::isEmpty
 ```
 ## 文件
 ```

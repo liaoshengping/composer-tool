@@ -94,4 +94,35 @@ class Verify
         return isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] && $_SERVER['HTTPS'] != 'off';
     }
 
+
+    /**
+     * 判断数据是否为空
+     * @param null $var          要判断的值
+     * @param bool $zeroIsEmpty  0是否也判断为空：true-判断为空（默认），false-判断不为空
+     * @return bool
+     */
+    public static function isEmpty($var = null, $zeroIsEmpty = true)
+    {
+        // 判断数据类型
+        switch ( gettype($var) ) {
+            case 'integer':
+                return $zeroIsEmpty
+                    ? (0 == $var ? true : false)             // ‘0’认为是空
+                    : (0 != $var && !$var ? true : false);   // ‘0’不认为是空
+                break;
+            case 'string':
+                return (0 == strlen($var)) ? true : false;
+                break;
+            case 'array':
+                return (0 == count($var)) ? true : false;
+                break;
+            case 'boolean':
+                return $var ? false : true;
+                break;
+            default:
+                return true;
+                break;
+        }
+    }
+
 }
