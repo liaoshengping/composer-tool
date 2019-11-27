@@ -8,6 +8,21 @@
 获取前七天的信息 Time::getLast7Days()
 请在   1.2天 完成订单Time::tranCountTimeFormat(时间戳)
 ```
+##数组
+>BaseArrayHelper::index($array,$index);
+```
+ $data = [
+     ['id'=>'1','name'=>'liaosp'],
+     ['id'=>'3','name'=>'liaosp'],
+     ['id'=>'2','name'=>'lianmin'],
+     ];
+     $obj = new array_index();
+     $res =$obj::index($data,'name');
+     var_dump($res);exit;
+``` 
+整理数组，把$index 当做key
+
+
 ## 字符：
 
 中文转化为英文首字母
