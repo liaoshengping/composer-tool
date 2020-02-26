@@ -69,4 +69,19 @@ class Strings
 
         return $key;
     }
+
+    /**
+     * 是否包含https
+     * @param $url
+     */
+    public static function isHttpOrHttps($url){
+        $preg = "/^http(s)?:\\/\\/.+/";
+        if(preg_match($preg,$url))
+        {
+            return true;
+        }else
+        {
+            return false;
+        }
+    }
 }

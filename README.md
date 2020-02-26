@@ -83,3 +83,7 @@ echo $file_contents;
 String::createUuid
 
 
+## 是否包含https
+String::isHttpOrHttps($url)
+
+
