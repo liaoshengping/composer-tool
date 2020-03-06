@@ -8,6 +8,7 @@ class Request
 {
     public static  function curlRequest($base_url, $query_data, $method = 'get', $ssl = true, $exe_timeout = 10, $conn_timeout = 10, $dns_timeout = 3600)
     {
+
         $ch = curl_init();
 
         if ( $method == 'get' ) {
