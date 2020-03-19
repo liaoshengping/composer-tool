@@ -176,5 +176,28 @@ class  Character
         return implode('', $temp_array);
     }
 
+    /**
+     * 大写转化为下划线
+     * @param $str
+     * @return string
+     */
+    public static function capital_to_underline($str)
+    {
+        $temp_array = array();
+        for ($i = 0; $i < strlen($str); $i++) {
+            $ascii_code = ord($str[$i]);
+            if ($ascii_code >= 65 && $ascii_code <= 90) {
+                if ($i == 0) {
+                    $temp_array[] = chr($ascii_code + 32);
+                } else {
+                    $temp_array[] = '_' . chr($ascii_code + 32);
+                }
+            } else {
+                $temp_array[] = $str[$i];
+            }
+        }
+        return implode('', $temp_array);
+    }
+
 
 }
