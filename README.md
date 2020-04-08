@@ -22,6 +22,11 @@
 ``` 
 整理数组，把$index 当做key
 
+```
+ArrayHelper::arrayReplace()
+```
+数组替换多维数组
+
 
 ## 字符：
 
