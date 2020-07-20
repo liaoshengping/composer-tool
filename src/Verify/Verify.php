@@ -4,6 +4,8 @@
 namespace Liaosp\Tool\Verify;
 
 
+
+
 class Verify
 {
     /**
@@ -122,6 +124,24 @@ class Verify
             default:
                 return true;
                 break;
+        }
+    }
+
+    /**
+     * 身份证验证
+     * @param $idCard
+     * @return bool
+     */
+    public static function validationIDCard($idCard)
+    {
+        $Until = new IdCardValidate();
+        if (strlen($idCard) == 18) {
+            return $Until->idcard_checksum18($idCard);
+        } elseif ((strlen($idCard) == 15)) {
+            $idCard = $Until->idcard_15to18($idCard);
+            return $Until->idcard_checksum18($idCard);
+        } else {
+            return false;
         }
     }
 
