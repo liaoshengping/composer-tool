@@ -156,6 +156,50 @@ class Time
         return $str;
     }
 
+    /**
+     * 未来几天的隔离时间
+     * 13：30
+     * 14：00
+     * 14：30
+     */
+    public static function getIsolationTime($day = 7, $minute = 30, $nowMsg = '立即购买')
+    {
+        $selectTime = array();
+        $nowTime = time();
+        for ($i = 1; $i <= $day; $i++) {
+            if ($i != 1) {
+                $nowTime = strtotime(date('Y-m-d', strtotime('+'.($i-1).' day')));
+            }
+            //离明天结束还有多少个30分钟
+            $isolation = $minute * 60;
+            $tomorrow = strtotime( date('Y-m-d',strtotime("+1day",$nowTime)));
+            $todayAllTime = $tomorrow - $nowTime;
+            $nums = intval($todayAllTime / $isolation);
+            $subArray = [];
+            for ($b = 1; $b <= $nums; $b++) {
+                $tomorrow = $tomorrow - $isolation;
+                $subArray[] = [
+                    'time' => $tomorrow,
+                    'formatTime' => date("H:i", $tomorrow),
+                ];
+            }
+            if($i ==1){
+                $subArray[] = [
+                    'time' => $nowTime,
+                    'formatTime' => $nowMsg . '(约' . date('H:i') . ')',
+                ];
+            }
+            $subArray = array_reverse($subArray);
+            $selectTime[] = [
+                'date'=>date('m月d日', $nowTime),
+                'data'=>$subArray,
+            ];
+
+            continue;
+        }
+        return $selectTime;
+    }
+
 
 
 
