@@ -51,10 +51,10 @@ class  Character
             return '';
         }
 
-        $fchar = ord($str{0});
+        $fchar = ord($str[0]);
 
         if ($fchar >= ord('A') && $fchar <= ord('z'))
-            return strtoupper($str{0});
+            return strtoupper($str[0]);
 
         $s1 = iconv('UTF-8', 'gb2312', $str);
 
@@ -62,7 +62,7 @@ class  Character
 
         $s = $s2 == $str ? $s1 : $str;
 
-        $asc = ord($s{0}) * 256 + ord($s{1}) - 65536;
+        $asc = ord($s[0]) * 256 + ord($s[1]) - 65536;
 
         if ($asc >= -20319 && $asc <= -20284)
             return 'A';
