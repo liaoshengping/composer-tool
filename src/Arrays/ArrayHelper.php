@@ -30,7 +30,7 @@ class ArrayHelper
      * @param string $sort
      * @return array
      */
-    public function arraySort($array, $keys, $sort = 'asc')
+    public static function arraySort($array, $keys, $sort = 'asc')
     {
         $newArr = $valArr = array();
         foreach ($array as $key => $value) {
