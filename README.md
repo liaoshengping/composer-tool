@@ -92,3 +92,13 @@ String::createUuid
 String::isHttpOrHttps($url)
 
 
+##获取指定级别域名
+
+```php
+UrlTool::getTopHost('http://test.test.liaosp.crm.dingdong.site',2);
+```
+print :crm.dingdong.site
+
+
+
+
