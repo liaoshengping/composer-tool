@@ -23,6 +23,7 @@
 整理数组，把$index 当做key
 
 ```
+
 ArrayHelper::arrayReplace()
 ```
 数组替换多维数组
@@ -37,6 +38,10 @@ Character::getEnByCnByString('我是中国人',2)  //return  WS
 user_id 转化为大写： UserId 或 userId  Character::convertUnderline('user_id',false)
 UserId =》 user_id大写字母转化为下划线Character::convertUnderlineToLetter
 ```
+字符串中间加 ***号
+
+[Strings::passStart()](https://cloud.tencent.com/developer/article/1480628)
+
 ## 验证
 ```
 判断是否为合法的ip地址 Verify::isIPAddress
