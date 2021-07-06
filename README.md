@@ -40,8 +40,8 @@ UserId =》 user_id大写字母转化为下划线Character::convertUnderlineToLe
 ```
 字符串中间加 ***号
 
-[Strings::passStart()](https://cloud.tencent.com/developer/article/1480628)
-
+[Strings::passStart('123123123',2,2)](https://cloud.tencent.com/developer/article/1480628)
+`"cardid":"6222***********3655","certifId":"4304**********1011","mobile":"138****6306","name":"张*",`
 ## 验证
 ```
 判断是否为合法的ip地址 Verify::isIPAddress
