@@ -7,6 +7,7 @@
 友好时间显示 比如 刚刚，前一分钟，前一天 Time::friendDate(23423232423)
 获取前七天的信息 Time::getLast7Days()
 请在   1.2天 完成订单Time::tranCountTimeFormat(时间戳)
+获取两个时间的间隔、耗时  Time::getRemainderTime(开始时间戳，结束时间戳)
 ```
 ##数组
 >BaseArrayHelper::index($array,$index);
